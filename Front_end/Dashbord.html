@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Dream Travellers</title>
+    
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('tr.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f7f8f8;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #1d3557;
+        }
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.744);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dream Travellers</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active btn btn-success text-white" href="Dashbord.html">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <h1>Welcome to Your Travel Dashboard</h1>
+    <p>Plan your dream trip effortlessly with all the information you need in one place.</p>
+</header>
+
+<main>
+    <form class="mb-5">
+        <div class="mb-3">
+            <label for="destination" class="form-label">Enter Your Destination</label>
+            <input type="text" class="form-control" id="destination" placeholder="e.g., Paris, New York, Cape Town" required>
+        </div>
+        <div class="mb-3">
+            <label for="placeDescription" class="form-label">Describe the Type of Place You Would Like to Visit</label>
+            <textarea class="form-control" id="placeDescription" rows="4" placeholder="Write a brief description of the type of place you'd like to visit, e.g., a peaceful beach, a bustling city, or a historical site." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Get Trip Details</button>
+    </form>
+
+    <section>
+        <h2>Trip Information</h2>
+        <div class="accordion" id="tripDetails">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBudget">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBudget" aria-expanded="true" aria-controls="collapseBudget">
+                        Estimated Budget
+                    </button>
+                </h2>
+                <div id="collapseBudget" class="accordion-collapse collapse show" aria-labelledby="headingBudget" data-bs-parent="#tripDetails">
+                    <div class="accordion-body">
+                        Get an estimated budget for travel, accommodation, and food expenses.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTransport">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTransport" aria-expanded="false" aria-controls="collapseTransport">
+                        Transportation Options
+                    </button>
+                </h2>
+                <div id="collapseTransport" class="accordion-collapse collapse" aria-labelledby="headingTransport" data-bs-parent="#tripDetails">
+                    <div class="accordion-body">
+                        Suggested flights, buses, taxis, and private transportation options for different budgets.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingAccommodation">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccommodation" aria-expanded="false" aria-controls="collapseAccommodation">
+                        Accommodation
+                    </button>
+                </h2>
+                <div id="collapseAccommodation" class="accordion-collapse collapse" aria-labelledby="headingAccommodation" data-bs-parent="#tripDetails">
+                    <div class="accordion-body">
+                        A list of hotels, B&amp;Bs, and guesthouses with pricing and features like free Wi-Fi, room service, and gyms.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingWeather">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeather" aria-expanded="false" aria-controls="collapseWeather">
+                        Weather Forecast
+                    </button>
+                </h2>
+                <div id="collapseWeather" class="accordion-collapse collapse" aria-labelledby="headingWeather" data-bs-parent="#tripDetails">
+                    <div class="accordion-body">
+                        Weather forecasts for your travel dates.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSafety">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSafety" aria-expanded="false" aria-controls="collapseSafety">
+                        Safety Tips
+                    </button>
+                </h2>
+                <div id="collapseSafety" class="accordion-collapse collapse" aria-labelledby="headingSafety" data-bs-parent="#tripDetails">
+                    <div class="accordion-body">
+                        Safety tips and travel advisories for your destination.
+                    </div>
+                </div>
+            </div>
+            <!-- Add more accordion items for cultural tips, events, restaurants, attractions, etc. -->
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Dream Travellers. All rights reserved.</p>
+</footer>
+
+<!-- Add Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
