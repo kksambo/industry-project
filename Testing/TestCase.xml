@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-cases>
+  
+  <test-case>
+    <test-case-id>TC-REGISTER-001</test-case-id>
+    <description>Create account with valid data</description>
+    <priority>High</priority>
+    <test-type>Functional</test-type>
+    <created-by> Hlatshwayo NC </created-by>
+    <date-created>2025-04-29</date-created>
+    <preconditions>
+      <precondition>User is on the registration page</precondition>
+      <precondition>Email is not already registered</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Enter valid username</action>
+        <expected-result>Username is accepted</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>2</step-number>
+        <action>Enter valid email</action>
+        <expected-result>Email is accepted</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>3</step-number>
+        <action>Enter valid password</action>
+        <expected-result>Password is accepted</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>4</step-number>
+        <action>Confirm password</action>
+        <expected-result>Password confirmation matches</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>5</step-number>
+        <action>Click "Create Account" button</action>
+        <expected-result>Account is created successfully</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>User is redirected to dashboard or welcome page</expected-result>
+      <expected-result>Account creation success message appears</expected-result>
+      <expected-result>Confirmation email is sent</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+
+
+  <test-case>
+    <test-case-id>TC-LOGIN-001</test-case-id>
+    <description>Valid login credentials</description>
+    <priority>High</priority>
+    <test-type>Functional</test-type>
+    <created-by> Hlatshwayo NC </created-by>
+    <date-created>2025-04-29</date-created>
+    <preconditions>
+      <precondition>User has an active account</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Enter valid username or email</action>
+        <expected-result>Input is accepted</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>2</step-number>
+        <action>Enter valid password</action>
+        <expected-result>Password is accepted</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>3</step-number>
+        <action>Click "Login" button</action>
+        <expected-result>User is logged in successfully</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>User is redirected to dashboard</expected-result>
+      <expected-result>Login success message appears</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+
+
+
+
+
+<test-case>
+    <test-case-id>TC-DASHBOARD-001</test-case-id>
+    <description>Verify the functionality of the Dashboard page</description>
+    <priority>High</priority>
+    <test-type>Functional</test-type>
+    <created-by>Hlatshwayo NC</created-by>
+    <date-created>2025-04-30</date-created>
+    <preconditions>
+        <precondition>User is logged in successfully</precondition>
+        <precondition>Dashboard page is accessible</precondition>
+    </preconditions>
+    <steps>
+        <step>
+            <step-number>1</step-number>
+            <action>Navigate to the Dashboard page</action>
+            <expected-result>Dashboard page loads successfully</expected-result>
+            <actual-result></actual-result>
+            <status>Not Executed</status>
+        </step>
+        <step>
+            <step-number>2</step-number>
+            <action>Verify the presence of the "Enter Your Destination" input field</action>
+            <expected-result>Input field is visible and functional</expected-result>
+            <actual-result></actual-result>
+            <status>Not Executed</status>
+        </step>
+        <step>
+            <step-number>3</step-number>
+            <action>Verify the presence of the "Describe the Type of Place You Would Like to Visit" textarea</action>
+            <expected-result>Textarea is visible and functional</expected-result>
+            <actual-result></actual-result>
+            <status>Not Executed</status>
+        </step>
+        <step>
+            <step-number>4</step-number>
+            <action>Click the "Get Trip Details" button</action>
+            <expected-result>Accordion sections for trip details are displayed</expected-result>
+            <actual-result></actual-result>
+            <status>Not Executed</status>
+        </step>
+        <step>
+            <step-number>5</step-number>
+            <action>Expand the "Estimated Budget" accordion section</action>
+            <expected-result>Details about the estimated budget are displayed</expected-result>
+            <actual-result></actual-result>
+            <status>Not Executed</status>
+        </step>
+        <step>
+            <step-number>6</step-number>
+            <action>Expand the "Transportation Options" accordion section</action>
+            <expected-result>Details about transportation options are displayed</expected-result>
+            <actual-result></actual-result>
+            <status>Not Executed</status>
+        </step>
+    </steps>
+    <expected-results>
+        <expected-result>All input fields and buttons are functional</expected-result>
+        <expected-result>Accordion sections display relevant trip details</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+</test-case>
+
+
+
+
+  <test-case>
+    <test-case-id>TC-LOGOUT-001</test-case-id>
+    <description>User logs out from an active session</description>
+    <priority>Medium</priority>
+    <test-type>Functional</test-type>
+    <created-by> Hlatshwayo NC </created-by>
+    <date-created>2025-04-29</date-created>
+    <preconditions>
+      <precondition>User is logged in</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Click on "Logout" button or menu link</action>
+        <expected-result>Session is terminated</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>User is redirected to login page</expected-result>
+      <expected-result>Session cookies are cleared</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+
+
+  <test-case>
+    <test-case-id>TC-NAVBAR-002</test-case-id>
+    <description>Verify navigation bar displays and routes correctly (public view)</description>
+    <priority>Medium</priority>
+    <test-type>UI</test-type>
+    <created-by> Hlatshwayo NC </created-by>
+    <date-created>2025-04-29</date-created>
+    <preconditions>
+      <precondition>User is not logged in</precondition>
+      <precondition>User is on any public page of the website</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Verify visibility of nav bar links: Home, About, Contacts, Login, Register</action>
+        <expected-result>All specified links are visible in the nav bar</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>2</step-number>
+        <action>Click on "Home" link</action>
+        <expected-result>User is navigated to the Home page</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>3</step-number>
+        <action>Click on "About" link</action>
+        <expected-result>User is navigated to the About page</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>4</step-number>
+        <action>Click on "Contacts" link</action>
+        <expected-result>User is navigated to the Contacts page</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>5</step-number>
+        <action>Click on "Login" link</action>
+        <expected-result>User is navigated to the Login page</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>6</step-number>
+        <action>Click on "Register" link</action>
+        <expected-result>User is navigated to the Register page</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>All navigation links are functional and lead to correct pages</expected-result>
+      <expected-result>Navigation bar remains consistent on all public pages</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+
+</test-cases>
