@@ -1,0 +1,71 @@
+<test-cases>
+  <!-- Test case for /createTravellers endpoint -->
+  <test-case>
+    <test-case-id>TC-POST-CREATE-TRAVELLERS-001</test-case-id>
+    <description>Test POST method for creating a traveller</description>
+    <priority>High</priority>
+    <test-type>API</test-type>
+    <created-by>Hlatshwayo NC</created-by>
+    <date-created>2025-04-30</date-created>
+    <preconditions>
+      <precondition>API server is running</precondition>
+      <precondition>Traveller class is implemented correctly</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Send POST request to `/createTravellers` endpoint</action>
+        <expected-result>Response status code is 200 (OK)</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>2</step-number>
+        <action>Verify response contains traveller details</action>
+        <expected-result>Response includes traveller's name, email, and other details</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>Traveller is created successfully</expected-result>
+      <expected-result>API returns correct response with traveller details</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+
+  <!-- Test case for /createTripInformation endpoint -->
+  <test-case>
+    <test-case-id>TC-POST-CREATE-TRIPINFO-001</test-case-id>
+    <description>Test POST method for creating trip information</description>
+    <priority>High</priority>
+    <test-type>API</test-type>
+    <created-by>Hlatshwayo NC</created-by>
+    <date-created>2025-04-30</date-created>
+    <preconditions>
+      <precondition>API server is running</precondition>
+      <precondition>TripInformation class is implemented correctly</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Send POST request to `/createTripInformation` endpoint</action>
+        <expected-result>Response status code is 200 (OK)</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>2</step-number>
+        <action>Verify response contains trip information details</action>
+        <expected-result>Response includes transportation, accommodation, and other details</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>Trip information is created successfully</expected-result>
+      <expected-result>API returns correct response with trip details</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+</test-cases>

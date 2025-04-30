@@ -1,0 +1,60 @@
+<test-cases>
+  <test-case>
+    <test-case-id>TC-MESSAGES-001</test-case-id>
+    <description>Send a valid CustomerMessage object</description>
+    <priority>High</priority>
+    <test-type>Functional</test-type>
+    <created-by>Hlatshwayo NC</created-by>
+    <date-created>2025-04-30</date-created>
+    <preconditions>
+      <precondition>The server is running</precondition>
+      <precondition>The endpoint `/messages` is accessible</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Send a POST request to `/messages` with a valid CustomerMessage object</action>
+        <expected-result>The server responds with HTTP 200 OK</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+      <step>
+        <step-number>2</step-number>
+        <action>Verify the response contains the same CustomerMessage object with an assigned ID</action>
+        <expected-result>The response contains the CustomerMessage object with a unique ID</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>The CustomerMessage object is returned with a unique ID</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+
+  <test-case>
+    <test-case-id>TC-MESSAGES-002</test-case-id>
+    <description>Send an invalid CustomerMessage object</description>
+    <priority>Medium</priority>
+    <test-type>Functional</test-type>
+    <created-by>Hlatshwayo NC</created-by>
+    <date-created>2025-04-30</date-created>
+    <preconditions>
+      <precondition>The server is running</precondition>
+      <precondition>The endpoint `/messages` is accessible</precondition>
+    </preconditions>
+    <steps>
+      <step>
+        <step-number>1</step-number>
+        <action>Send a POST request to `/messages` with an invalid CustomerMessage object (e.g., missing fields)</action>
+        <expected-result>The server responds with HTTP 400 Bad Request</expected-result>
+        <actual-result></actual-result>
+        <status>Not Executed</status>
+      </step>
+    </steps>
+    <expected-results>
+      <expected-result>The server rejects the request with an appropriate error message</expected-result>
+    </expected-results>
+    <overall-status>Not Executed</overall-status>
+  </test-case>
+</test-cases>
