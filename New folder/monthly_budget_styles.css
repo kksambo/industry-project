@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.tables-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.budget-table {
+    border-collapse: collapse;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e0e0e0;
+}
+
+.bold {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
