@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Dream Travellers</title>
+    
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('tr.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f7f8f8;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #1d3557;
+        }
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.744);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dream Travellers</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="logout()" class="nav-link active btn btn-success text-white">logout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <h1 id="greet">Welcome to Your Travel Dashboard</h1>
+    <p>Plan your dream trip effortlessly with all the information you need in one place.</p>
+</header>
+
+    <main>
+        <form id="tripForm" class="mb-5">
+            <div class="mb-3">
+                <label for="destination" class="form-label">Enter Your Destination</label>
+                <input type="text" class="form-control" id="destination" placeholder="e.g., Paris, New York, Cape Town" required>
+            </div>
+            <div class="mb-3">
+                <label for="placeDescription" class="form-label">Describe the Type of Place You Would Like to Visit</label>
+                <textarea class="form-control" id="placeDescription" rows="4" placeholder="e.g., a peaceful beach, a bustling city, or a historical site." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Get Trip Details</button>
+        </form>
+
+        <section id="tripDetails">
+            <h2>Trip Information</h2>
+            <!-- Details will be populated here -->
+        </section>
+    </main>
+<footer>
+    <p>&copy; 2025 Dream Travellers. All rights reserved.</p>
+</footer>
+
+<!-- Add Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    onload = function() {
+
+        let name  = localStorage.getItem("name");
+
+        
+
+        if (name == null) {
+            window.location.href = "index.html";
+        }
+       document.getElementById("greet").innerHTML = "Welcome " + name;
+
+
+    }
+
+        function logout() {
+            localStorage.removeItem("name");
+            window.location.href = "Index.html";
+        }
+     
+           
+        document.getElementById("tripForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const destination = document.getElementById("destination").value;
+            const placeDescription = document.getElementById("placeDescription").value;
+
+            const response = await fetch('https://industry-backend-40cy.onrender.com/get_trip_details/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    destination: destination,
+                    place_description: placeDescription,
+                }),
+            });
+const data = await response.json();
+
+// Split the data using "Mapula" as the delimiter
+const splitData = String(data).split("Mapula.");
+
+// Trim each part to remove extra spaces
+const cleanedData = splitData.map(item => item.trim());
+
+// Output the result
+console.log(cleanedData);
+
+// Display the data in the HTML
+console.log(data);
+
+if (data.error) {
+    document.getElementById("tripDetails").innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+} else {
+    document.getElementById("tripDetails").innerHTML = `
+        <div><strong>Estimated Budget:</strong> ${cleanedData[0]}</div>
+        <div><strong>Transportation Options:</strong> ${cleanedData[1]}</div>
+        <div><strong>Accommodation:</strong> ${cleanedData[2]}</div>
+        <div><strong>Weather Forecast:</strong> ${cleanedData[3]}</div>
+        <div><strong>Safety Tips:</strong> ${cleanedData[4]}</div>
+    `;
+}
+
+});
+    </script>
+</body>
+</html>
